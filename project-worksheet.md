@@ -26,7 +26,7 @@ The game will also keep track of the high scores.
 
 ## Wireframes
 
-IMG_0217.JPG
+![Wireframes](images/IMG_0217.JPG?raw=true "Wireframes") 
 
 ## Priority Matrix
 
