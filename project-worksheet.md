@@ -17,12 +17,16 @@ This schedule will be used to keep track of your progress throughout the week an
 
 
 ## Project Description
+PONG
 
-Use this section to describe your final project and perhaps any links to relevant sites that help convey the concept and\or functionality.
+Pong is a game for 1 or 2 players, the goal is to shoot the ball behind your opponents paddle by moving your own paddle up and down.
+like here: https://pong-2.com/
+
+The game will also keep track of the high scores.
 
 ## Wireframes
 
-Include images of your wireframes.
+IMG_0217.JPG
 
 ## Priority Matrix
 
@@ -61,6 +65,10 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
 | Component 1 | H | 10hrs| 12hrs | 12hrs |
+| Component 1 | H | 10hrs| 12hrs | 12hrs |
+| Component 1 | H | 10hrs| 12hrs | 12hrs |
+| Component 1 | H | 10hrs| 12hrs | 12hrs |
+| Component 1 | H | 10hrs| 12hrs | 12hrs |
 | Total |  | 10hrs| 12hrs | 12hrs |
 
 ## Helper Functions
@@ -88,4 +96,4 @@ Use this section to include a brief code snippet of functionality that you are p
 
 #### SAMPLE.....
 **ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                
-**RESOLUTION**: Missing comma after first object in sources {} object 
+**RESOLUTION**: Missing comma after first object in sources {} object
