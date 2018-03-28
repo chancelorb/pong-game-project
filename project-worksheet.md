@@ -81,6 +81,9 @@ Landing page
 Form creates: let playerOne = input first name; let playerTwo = input second name;  
 start button: $(button).on('click' activates the startGame function);
 
+Fire ball  
+Research collision detection.
+
 Game page  
 move paddle playerOne: keys up and down;  
 move paddle playerTWo: keys a  and z;  
@@ -88,7 +91,7 @@ pause button: press to pause the game;
 key up || down: starts the playGame function, this creates the ball and fires it towards playerTwo;  
 count points function: counts++ when ball is passed the paddle;  
 
-The players play by moving there buttons till one player has reached 10 points.    
+The players play by moving their buttons till one player has reached 10 points.    
 
 End page    
 When 10 points are reached: function pop up winner screen.
@@ -102,10 +105,11 @@ Post MVP
 | --- | :---: |  :---: | :---: | :---: |
 | Worksheet | H | 3hrs| 3hrs | 3.5hrs |
 | Landing page | H | 3hrs| 0hrs | .. |
+| Collision Detection | H | 5hrs| 0hrs | .. |
 | Game page | H | 6hrs| 0hrs | .. |
 | End page | H | 6hrs| 0hrs | .. |
 | Post MVP | L | 18hrs| 0hrs | .. |
-| Total |  | 36hrs| 3hrs | .. |
+| Total |  | 41hrs| 3hrs | .. |
 
 ## Helper Functions
 Helper functions should be generic enought that they can be reused in other applications. Use this section to document all helper functions that fall into this category.
