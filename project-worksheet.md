@@ -32,9 +32,9 @@ like here: https://pong-2.com/
 Welcome screen.  
 Being able to play a 2 player game till 10 points is reached.  
 A winner screen.  
-Play Again.  
+Play Again function.  
 A pause function.  
-Being able to play a single player game.  
+Being able to play a single player game(no 10 points limit).  
 Being able to move the paddle with the camera.  
 
 ## Game Components
@@ -56,19 +56,42 @@ When the ball goes behind the paddle the one who last touched the ball gets one 
 The game goes on like this until one player reached 10 points.
 
 ### Winning The Game
-What does it look like when the game ends, what determines winning or losing?
+When one of the players reached 10 points the game is over. This activates a pop up screen.
+With the single player mode the screen will show the amount of points and a button to 'play again'.
+with the 2 player mode the screen will show 'The winner is .....' and a button with the text 'play again'.
 
 ### Game Reset
-How will the user restart the game once it has been completed.
+The player can restart the game by pressing the 'play again' button.
 
 ## MVP
 
-Include the full list of features that will be part of your MVP
+Welcome screen.  
+Being able to play a 2 player game till 10 points is reached.  
+A winner screen.  
+Play Again function.  
 
 ## POST MVP
 
-Include the full list of features that you are considering for POST MVP
+A pause function.  
+Being able to play a single player game(no 10 points limit).  
+Being able to move the paddle with the camera.
 ## Functional Components
+
+Landing page
+Form creates: let playerOne = input first name; let playerTwo = input second name;  
+start button: $(button).on('click' activates the startGame function);
+
+Game page
+move paddle playerOne: keys up and down;  
+move paddle playerTWo: keys a  and z;  
+pause button: press to pause the game;  
+key up || down: starts the playGame function, this creates the ball and fires it towards playerTwo;  
+count points function: counts++ when ball is passed the paddle;  
+
+The players play by moving there buttons till one player has reached 10 points.  
+
+When 10 points are reached: function pop up winner screen.
+'play agian' button: this sets points to 0;
 
 Based on the initial logic defined in the previous game phases section try and breakdown the logic further into functional components, and by that we mean functions.  Does your logic indicate that code could be encapsulated for the purpose of reusablility.  Once a function has been defined it can then be incorporated into a class as a method.
 
