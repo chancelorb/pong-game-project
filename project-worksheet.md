@@ -77,11 +77,11 @@ Being able to play a single player game(no 10 points limit).
 Being able to move the paddle with the camera.
 ## Functional Components
 
-Landing page
+Landing page  
 Form creates: let playerOne = input first name; let playerTwo = input second name;  
 start button: $(button).on('click' activates the startGame function);
 
-Game page
+Game page  
 move paddle playerOne: keys up and down;  
 move paddle playerTWo: keys a  and z;  
 pause button: press to pause the game;  
@@ -90,11 +90,11 @@ count points function: counts++ when ball is passed the paddle;
 
 The players play by moving there buttons till one player has reached 10 points.    
 
-End page  
+End page    
 When 10 points are reached: function pop up winner screen.
 'play agian' button: this activates the startGame function but saves the names;  
 
-MVP  
+Post MVP  
 
 
 
