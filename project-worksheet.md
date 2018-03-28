@@ -22,26 +22,38 @@ PONG
 Pong is a game for 1 or 2 players, the goal is to shoot the ball behind your opponents paddle by moving your own paddle up and down.
 like here: https://pong-2.com/
 
-The game will also keep track of the high scores.
 
 ## Wireframes
 
-![Wireframes](images/IMG_0217.JPG?raw=true "Wireframes") 
+![Wireframes](images/IMG_0217.JPG?raw=true "Wireframes")
 
 ## Priority Matrix
 
-Include a full list of features that have been prioritized based on the `Time and Importance` Matix.  
+Welcome screen.  
+Being able to play a 2 player game till 10 points is reached.  
+A winner screen.  
+Play Again.  
+A pause function.  
+Being able to play a single player game.  
+Being able to move the paddle with the camera.  
 
 ## Game Components
 
 ### Landing Page
-What will a player see when they start your game?
+The landing page will display 'PONG', underneath a form for the name(s), and a start button.  
 
 ### Game Initialization
-What will a player see when the game is started?
+The player will see the field and setup(two paddles and a dotted line in the middle).
+In the left corner instructions for player 2 and in the right corner instructions for player 1.
+For the 2 player mode the display above the field will say 'player 1 press your key'.
+For the single player mode the display will say 'press key to start'.
+Underneath the field is a pause button.
 
 ### Playing The Game
-What will be the flow of the game, what will the user be expeted to do and what will the user expect from the gam
+By moving the paddle the first time the ball will fire. after this moment the player(s)
+has to use the arrow up and down keys(for player 2 the 'a' key for up and the 'z' key for down).
+When the ball goes behind the paddle the one who last touched the ball gets one point.
+The game goes on like this until one player reached 10 points.
 
 ### Winning The Game
 What does it look like when the game ends, what determines winning or losing?
