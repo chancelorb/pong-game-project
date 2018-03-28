@@ -104,7 +104,7 @@ Post MVP
 | Landing page | H | 3hrs| 0hrs | .. |
 | Game page | H | 6hrs| 0hrs | .. |
 | End page | H | 6hrs| 0hrs | .. |
-| MVP | L | 18hrs| 0hrs | .. |
+| Post MVP | L | 18hrs| 0hrs | .. |
 | Total |  | 36hrs| 3hrs | .. |
 
 ## Helper Functions
