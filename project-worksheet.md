@@ -88,23 +88,24 @@ pause button: press to pause the game;
 key up || down: starts the playGame function, this creates the ball and fires it towards playerTwo;  
 count points function: counts++ when ball is passed the paddle;  
 
-The players play by moving there buttons till one player has reached 10 points.  
+The players play by moving there buttons till one player has reached 10 points.    
 
+End page  
 When 10 points are reached: function pop up winner screen.
-'play agian' button: this sets points to 0;
+'play agian' button: this activates the startGame function but saves the names;  
 
-Based on the initial logic defined in the previous game phases section try and breakdown the logic further into functional components, and by that we mean functions.  Does your logic indicate that code could be encapsulated for the purpose of reusablility.  Once a function has been defined it can then be incorporated into a class as a method.
+MVP  
 
-Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted.
+
 
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Component 1 | H | 10hrs| 12hrs | 12hrs |
-| Component 1 | H | 10hrs| 12hrs | 12hrs |
-| Component 1 | H | 10hrs| 12hrs | 12hrs |
-| Component 1 | H | 10hrs| 12hrs | 12hrs |
-| Component 1 | H | 10hrs| 12hrs | 12hrs |
-| Total |  | 10hrs| 12hrs | 12hrs |
+| Worksheet | H | 3hrs| 3hrs | 3.5hrs |
+| Landing page | H | 3hrs| 0hrs | .. |
+| Game page | H | 6hrs| 0hrs | .. |
+| End page | H | 6hrs| 0hrs | .. |
+| MVP | L | 18hrs| 0hrs | .. |
+| Total |  | 36hrs| 3hrs | .. |
 
 ## Helper Functions
 Helper functions should be generic enought that they can be reused in other applications. Use this section to document all helper functions that fall into this category.
