@@ -1,0 +1,85 @@
+body {
+  background-color: #000;
+  color: #fff;
+}
+header {
+  text-align: center;
+}
+.display {
+  border: 2px solid #fff;
+  border-radius: 20%;
+  width: 500px;
+  margin: 20px auto;
+  text-align: center;
+}
+.one{
+  font-size: 15px;
+  position: absolute;
+  right: 0;
+}
+.two{
+  font-size: 15px;
+  position: absolute;
+  left: 0;
+}
+.field {
+  border: 2px solid #fff;
+  height: 300px;
+  width: 500px;
+  margin: auto;
+  position: relative;
+}
+
+.left-side {
+  border-left: 2px solid #fff;
+  border-right: 2px dashed #fff;
+  width: 200px;
+  height: 300px;
+  left: 48px;
+  position: absolute;
+}
+.right-side {
+  border-right: 2px solid #fff;
+  width: 200px;
+  height: 300px;
+  right: 48px;
+  position: absolute;
+}
+.paddle {
+  border: 1px solid #fff;
+  width: 10px;
+  height: 60px;
+  border-radius: 20%;
+  position: absolute;
+}
+#left {
+  background-color: #00f;
+  left: -6px;
+  top: 120px;
+}
+#right {
+  background-color: #f00;
+  right: -6px;
+  top: 120px;
+}
+
+.play-again  {
+  display: block;
+  margin: 15px auto;
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #fff;
+}
+.footer {
+  position: relative;
+}
+
+#ball {
+  position: absolute;
+  background-color: #ff0;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  left: 243px;
+  top: 150px;
+}
