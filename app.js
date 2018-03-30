@@ -23,13 +23,13 @@ $(document).ready(function() {
     height: 300,
   };
   const direction = {
-    x: "+",
+    x: "",
     speed: 200,
 
   }
 
 
-  setInterval(function(){//check for colition and update
+  setInterval(function(){//check for collision and update
     ball.position = ball.name[0].getBoundingClientRect();
     bluePaddle.position = bluePaddle.name[0].getBoundingClientRect();
     redPaddle.position = redPaddle.name[0].getBoundingClientRect();
@@ -38,7 +38,7 @@ $(document).ready(function() {
        ball.position.x + ball.position.width > bluePaddle.position.x &&
        ball.position.y < bluePaddle.position.y + bluePaddle.position.height &&
        ball.position.height + ball.position.y > bluePaddle.position.y) {
-        direction.x = '-';
+        direction.x = '+=50';
         direction.speed += 10;
         console.log('Touched Blue')
     };
@@ -47,18 +47,21 @@ $(document).ready(function() {
        ball.position.x + ball.position.width > redPaddle.position.x &&
        ball.position.y < redPaddle.position.y + redPaddle.position.height &&
        ball.position.height + ball.position.y > redPaddle.position.y) {
-        direction.x = '-';
-        direction.speed -= 10;
+        direction.x = '-=50';
+        direction.speed += 10;
         console.log('Touched Red');
     };
-
+    shootBall();
   }, 20)
 
 
-  if (ball.start === 5) {
-    setInterval(function() {ball.name.animate({'left': `$(direction.x)=10px`}, $(direction.speed))});// interval and with small jumps
+  function shootBall() {
+    if (ball.start === 5) {
 
-  };
+      ball.name.animate({'left': direction.x});// interval and with small jumps
+
+    };
+  }
 
 
   $(document).on('keydown', function(e) {
