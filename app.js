@@ -27,9 +27,8 @@ $(document).ready(function() {
     winnerIs();
 
     if (ball.start === 1) {
-      $('.game').attr('id', 'game-on')
-      console.log(bluePaddle.player);
-      console.log(redPaddle.player);
+      $('.game').attr('id', 'game-on');
+      ballStartPosition();
     }
 
     if (ball.start === 2) {
@@ -39,10 +38,9 @@ $(document).ready(function() {
           console.log(ball.position.x);
           ball.start = 3;
       } else  if (bluePaddle.position.x > ball.position.x){
-          alert('red wins');
           ball.start = 1;
           redPaddle.score++;
-          console.log(redPaddle.score);
+          $('.score-mid').text(`${bluePaddle.score} : ${redPaddle.score}`);
           ballStartPosition();
       }
     };
@@ -52,9 +50,9 @@ $(document).ready(function() {
       if (redTouch()) {
         ball.start = 2;
       }else if (redPaddle.position.x < ball.position.x) {
-        alert('blue wins');
         ball.start = 1;
         bluePaddle.score++;
+        $('.score-mid').text(`${bluePaddle.score} : ${redPaddle.score}`);
         ballStartPosition();
       };
     };
@@ -93,27 +91,32 @@ $(document).ready(function() {
   })
   $('.start-button').click(function() {
     ball.start = 1;
-    bluePaddle.player = $('.player1').val();
-    redPaddle.player = $('.player2').val();
-    $('form').attr('id', 'form-of')
-  
+    bluePaddle.player = $('.player1').val().toUpperCase();
+    redPaddle.player = $('.player2').val().toUpperCase();
+    $('form').attr('id', 'form-of');
+    $('.score-left').text(`${bluePaddle.player}`);
+    $('.score-right').text(`${redPaddle.player}`);
   });
 
   $('.play-again').click(function() {
     ball.start = 1;
     bluePaddle.score = 0;
     redPaddle.score = 0;
-    $('winner-field').remove('id');
+    $('.winner-field').removeAttr('id');
+    $('.score-mid').text(`${bluePaddle.score} : ${redPaddle.score}`);
+    
   });
 
 
 
   function winnerIs() {
     if (bluePaddle.score === 5) {
-      $('.show-winner').text(`WINNER IS BlUE!`);
+      $('.game').removeAttr('id')
+      $('.show-winner').text(`WINNER IS ${bluePaddle.player}!`);
       $('.winner-field').attr('id', 'show-winner');
     } else if (redPaddle.score === 5) {
-      $('.show-winner').text(`WINNER IS RED!`);
+      $('.game').removeAttr('id')
+      $('.show-winner').text(`WINNER IS ${redPaddle.player}!`);
       $('.winner-field').attr('id', 'show-winner');
     }
   }
