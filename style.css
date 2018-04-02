@@ -120,12 +120,14 @@ h1 {
   font-size: 15px;
   position: relative;
   float: left;
+  margin-left: 30px;
 }
 .score-right {
   display: inline-block;
   font-size: 15px;
   position: relative;
   float: right;
+  margin-right: 30px;
 }
 .score-mid {
   display: inline-block;

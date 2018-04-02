@@ -8,6 +8,9 @@ $(document).ready(function() {
   const ball = {
     name: $('#ball'),
     start: 0, //0=not playing 1=just pressed start 2=last touched by blue 3= last touched by red 4=display winner
+    xVal: 243,
+    yVal: 150,
+
   }
 
   const redPaddle = {
@@ -32,8 +35,10 @@ $(document).ready(function() {
     }
 
     if (ball.start === 2) {
-      $('#ball').css('left', '-=10px');// interval and with small jumps
-      $('#ball').css('top', '-=1px');// interval and with small jumps
+      moveBall(-5, 0)
+      // $('#ball').css('left', '(ball.position.x * 2)px');// interval and with small jumps
+      // $('#ball').css('top', '(ball.position.y * 2)px');// interval and with small jumps
+
       if (blueTouch()) {
           console.log(ball.position.x);
           ball.start = 3;
@@ -45,8 +50,8 @@ $(document).ready(function() {
       }
     };
     if (ball.start === 3) {
-      $('#ball').css('left', '+=10px');
-      $('#ball').css('top', '+=1px');
+      moveBall(5, 0);
+
       if (redTouch()) {
         ball.start = 2;
       }else if (redPaddle.position.x < ball.position.x) {
@@ -62,6 +67,20 @@ $(document).ready(function() {
   function ballStartPosition() {
     $('#ball').css('left', '243px');
     $('#ball').css('top', '150px');
+    ball.xVal = 243;
+    ball.yVal = 150;
+  }
+
+  function moveBall(one, two) {
+
+    let x = ball.xVal + one;
+    let y = ball.yVal + two;
+    $('#ball').css('left', `${x}px`);
+    $('#ball').css('top', `${y}px`);
+    ball.xVal = x;
+    ball.yVal = y;
+    console.log(ball.xVal);
+    console.log(ball.yVal);
   }
 
   function blueTouch() { //collision detection
@@ -104,7 +123,7 @@ $(document).ready(function() {
     redPaddle.score = 0;
     $('.winner-field').removeAttr('id');
     $('.score-mid').text(`${bluePaddle.score} : ${redPaddle.score}`);
-    
+
   });
 
 
