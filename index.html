@@ -15,27 +15,51 @@
   </header>
 
   <hr>
-  <div>
+<!-- start landing page -->
+  <!--<div class='landing-page'>-->
+
+  <form action="#">
+    <h2>Player 1</h2><br>
+    <input type="text" class='player1' placeholder='Name:'><br>
+    <h2>Player 2</h2><br>
+    <input type="text" class='player2'  placeholder='Name:'><br>
+    <button class='start-button'>START GAME</button>
+
+  </form>
+  <!--</div>-->
+
+<!-- start game page -->
+  <div class='game'>
     <div class='display'>
-      <h1>Something</h1>
+      <div class='score-left'>Player 1</div>
+      <div class='score-mid'>0 : 0</div>
+      <div class='score-right'>Player 2</div>
     </div>
+
+
+    <div class='field'>
+      <div class='left-side'>
+        <div class='paddle' id='left'></div>
+      </div>
+      <div id='ball'></div>
+      <div class='right-side'>
+        <div class='paddle' id='right'></div>
+      </div>
+    </div>
+
+    <button class='play-again'>PLAY AGAIN</button>
+
+    <div class='footer'>
+      <div class='one'>PRESS "up" or "down"</div>
+      <div class='two'>PRESS "a" or "z"</div>
+    </div>
+
   </div>
-
-  <div class='field'>
-    <div class='left-side'>
-      <div class='paddle' id='left'></div>
-    </div>
-    <div id='ball'></div>
-    <div class='right-side'>
-      <div class='paddle' id='right'></div>
-    </div>
-  </div>
-
-  <button class='play-again'>PLAY AGAIN</button>
-
-  <div class='footer'>
-    <div class='one'>PRESS "up" or "down"</div>
-    <div class='two'>PRESS "a" or "z"</div>
+<!--start score page -->
+  <div class='winner-field'>
+    <h1>PONG</h1>
+    <p class='show-winner'></p>
+    <button class='play-again'>PLAY AGAIN</button>
   </div>
 
 
