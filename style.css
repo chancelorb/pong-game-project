@@ -167,3 +167,32 @@ h1 {
 #form-of {
   display: none;
 }
+
+.left-border {
+  border: 3px solid rgba(0,0,0,0);
+  height: 295px;
+  width: 0;
+  left: -2px;
+  position: absolute;
+}
+.right-border {
+  border: 3px solid rgba(0,0,0,0);
+  height: 295px;
+  width: 0;
+  right: -2px;
+  position: absolute;
+}
+.top-border {
+  border: 3px solid rgba(0,0,0,0);
+  height: 0;
+  width: 495px;
+  top: -4;
+  position: absolute;
+}
+.bottom-border {
+  border: 3px solid rgba(0,0,0,0);
+  height: 0;
+  width: 495px;
+  bottom: -2px;
+  position: absolute;
+}

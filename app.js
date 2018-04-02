@@ -10,6 +10,8 @@ $(document).ready(function() {
     start: 0, //0=not playing 1=just pressed start 2=last touched by blue 3= last touched by red 4=display winner
     xVal: 243,
     yVal: 150,
+    directionX: -5,
+    directionY: -1,
 
   }
 
@@ -22,39 +24,52 @@ $(document).ready(function() {
     width: 243,
     height: 300,
   };
+const borderLeft = {name: $('.left-border')};
+const borderRight = {name: $('.right-border')};
+const borderTop = {name: $('.top-border')};
+const borderBottom = {name: $('.bottom-border')};
 
   setInterval(function(){//check for collision and update
     ball.position = ball.name[0].getBoundingClientRect();
     bluePaddle.position = bluePaddle.name[0].getBoundingClientRect();
     redPaddle.position = redPaddle.name[0].getBoundingClientRect();
-    winnerIs();
+    borderLeft.position = borderLeft.name[0].getBoundingClientRect();
+    borderRight.position = borderRight.name[0].getBoundingClientRect();
+    borderTop.position = borderTop.name[0].getBoundingClientRect();
+    borderBottom.position = borderBottom.name[0].getBoundingClientRect();
 
+    winnerIs();
+    if (topTouch() || bottomTouch()){
+      ball.directionY *= -1;
+      console.log(ball.directionY);
+    }
     if (ball.start === 1) {
       $('.game').attr('id', 'game-on');
       ballStartPosition();
     }
 
     if (ball.start === 2) {
-      moveBall(-5, 0)
-      // $('#ball').css('left', '(ball.position.x * 2)px');// interval and with small jumps
-      // $('#ball').css('top', '(ball.position.y * 2)px');// interval and with small jumps
+      moveBall()
+
 
       if (blueTouch()) {
-          console.log(ball.position.x);
-          ball.start = 3;
-      } else  if (bluePaddle.position.x > ball.position.x){
-          ball.start = 1;
-          redPaddle.score++;
-          $('.score-mid').text(`${bluePaddle.score} : ${redPaddle.score}`);
-          ballStartPosition();
+        ball.directionX *= -1; // change ball direction
+        ball.directionX++; // to increase ball speed
+        ball.start = 3;
+      } else  if (borderLeft.position.x > ball.position.x){
+        ball.start = 1;
+        redPaddle.score++;
+        $('.score-mid').text(`${bluePaddle.score} : ${redPaddle.score}`);
+        ballStartPosition();
       }
     };
     if (ball.start === 3) {
-      moveBall(5, 0);
+      moveBall();
 
       if (redTouch()) {
+        ball.directionX *= -1;
         ball.start = 2;
-      }else if (redPaddle.position.x < ball.position.x) {
+      }else if (borderRight.position.x < ball.position.x) {
         ball.start = 1;
         bluePaddle.score++;
         $('.score-mid').text(`${bluePaddle.score} : ${redPaddle.score}`);
@@ -69,20 +84,29 @@ $(document).ready(function() {
     $('#ball').css('top', '150px');
     ball.xVal = 243;
     ball.yVal = 150;
+    ball.directionX = -5;
+    ball.directionY = -1;
   }
 
-  function moveBall(one, two) {
 
-    let x = ball.xVal + one;
-    let y = ball.yVal + two;
+  function moveBall() {
+
+    let x = ball.xVal + ball.directionX;
+    let y = ball.yVal + ball.directionY;
     $('#ball').css('left', `${x}px`);
     $('#ball').css('top', `${y}px`);
     ball.xVal = x;
     ball.yVal = y;
-    console.log(ball.xVal);
-    console.log(ball.yVal);
+    // console.log(ball.xVal);
+    // console.log(ball.yVal);
   }
 
+  function topTouch() {
+    return (ball.position.x < borderTop.position.x + borderTop.position.width && ball.position.x + ball.position.width > borderTop.position.x && ball.position.y < borderTop.position.y + borderTop.position.height && ball.position.height + ball.position.y > borderTop.position.y)
+  }
+  function bottomTouch() {
+    return (ball.position.x < borderBottom.position.x + borderBottom.position.width && ball.position.x + ball.position.width > borderBottom.position.x && ball.position.y < borderBottom.position.y + borderBottom.position.height && ball.position.height + ball.position.y > borderBottom.position.y)
+  }
   function blueTouch() { //collision detection
     return (ball.position.x < bluePaddle.position.x + bluePaddle.position.width && ball.position.x + ball.position.width > bluePaddle.position.x && ball.position.y < bluePaddle.position.y + bluePaddle.position.height && ball.position.height + ball.position.y > bluePaddle.position.y)
   }
