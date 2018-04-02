@@ -104,10 +104,10 @@ Post MVP
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
 | Worksheet | H | 3hrs| 3hrs | 3.5hrs |
-| Landing page | H | 3hrs| 0hrs | .. |
-| Collision Detection | H | 5hrs| 0hrs | .. |
-| Game page | H | 6hrs| 0hrs | .. |
-| End page | H | 6hrs| 0hrs | .. |
+| Landing page | H | 3hrs| 3hrs | 3hrs |
+| Collision Detection | H | 5hrs| 6hrs | 6hrs |
+| Game page | H | 6hrs| 12hrs | 12hrs |
+| End page | H | 6hrs| 3hrs | 3hrs |
 | Post MVP | L | 18hrs| 0hrs | .. |
 | Total |  | 41hrs| 3hrs | .. |
 
@@ -119,7 +119,8 @@ Helper functions should be generic enought that they can be reused in other appl
 | Capitalize | This will capitalize the first letter in a string |
 
 ## Additional Libraries
- Use this section to list all supporting libraries and thier role in the project.
+ 
+ - jquery
 
 ## Code Snippet
 

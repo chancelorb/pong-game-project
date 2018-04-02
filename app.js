@@ -41,7 +41,6 @@ const borderBottom = {name: $('.bottom-border')};
     winnerIs();
     if (topTouch() || bottomTouch()){
       ball.directionY *= -1;
-      console.log(ball.directionY);
     }
     if (ball.start === 1) {
       $('.game').attr('id', 'game-on');
@@ -53,6 +52,7 @@ const borderBottom = {name: $('.bottom-border')};
 
 
       if (blueTouch()) {
+        
         ball.directionX *= -1; // change ball direction
         ball.directionX++; // to increase ball speed
         ball.start = 3;
