@@ -112,29 +112,65 @@ Post MVP
 | Total |  | 41hrs| 3hrs | .. |
 
 ## Helper Functions
-Helper functions should be generic enought that they can be reused in other applications. Use this section to document all helper functions that fall into this category.
 
 | Function | Description |
 | --- | :---: |  
-| Capitalize | This will capitalize the first letter in a string |
+| To Upper Case | This will capitalize all of the input |
+| Collision | This will look for collision between two elements |
 
 ## Additional Libraries
- 
+
  - jquery
 
 ## Code Snippet
+First I searched for the positions of the elements and than I
+looked for collision. if there is a collision a function gets triggered.
+```
+setInterval(function(){//check for collision and update
+  ball.position = ball.name[0].getBoundingClientRect();
+  bluePaddle.position = bluePaddle.name[0].getBoundingClientRect();
+  redPaddle.position = redPaddle.name[0].getBoundingClientRect();
+  borderLeft.position = borderLeft.name[0].getBoundingClientRect();
+  borderRight.position = borderRight.name[0].getBoundingClientRect();
+  borderTop.position = borderTop.name[0].getBoundingClientRect();
+  borderBottom.position = borderBottom.name[0].getBoundingClientRect();
 
-Use this section to include a brief code snippet of functionality that you are proud of an a brief description.  
+  winnerIs();
+  if (topTouch() || bottomTouch()){
+    ball.directionY *= -1;
+  }
+  if (ball.start === 1) {
+    $('.game').attr('id', 'game-on');
+    ballStartPosition();
+  }
+
+  if (ball.start === 2) {
+    moveBall()
+
+
+    if (blueTouch()) {
+
+      ball.directionX *= -1; // change ball direction
+      ball.directionX++; // to increase ball speed
+      ball.start = 3;
+    } else  if (borderLeft.position.x > ball.position.x){
+      ball.start = 1;
+      redPaddle.score++;
+      $('.score-mid').text(`${bluePaddle.score} : ${redPaddle.score}`);
+      ballStartPosition();
+    }
+  };
+  ```
 
 ## jQuery Discoveries
- Use this section to list some, but not all, of the jQuery methods and\or functionality discovered while working on this project.
+ - .css()
+ - .animate()
+ - .val()
 
 ## Change Log
- Use this section to document what changes were made and the reasoning behind those changes.  
+ None.
 
 ## Issues and Resolutions
- Use this section to list of all major issues encountered and their resolution.
-
-#### SAMPLE.....
-**ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                
-**RESOLUTION**: Missing comma after first object in sources {} object
+  Issue: Collision detection for the sides of the field.  
+  Solution: I made div elements on top of the border and looked for
+  collision with these div elements.  
