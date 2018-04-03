@@ -52,7 +52,7 @@ const borderBottom = {name: $('.bottom-border')};
 
 
       if (blueTouch()) {
-        
+
         ball.directionX *= -1; // change ball direction
         ball.directionX++; // to increase ball speed
         ball.start = 3;
@@ -139,7 +139,9 @@ const borderBottom = {name: $('.bottom-border')};
     $('form').attr('id', 'form-of');
     $('.score-left').text(`${bluePaddle.player}`);
     $('.score-right').text(`${redPaddle.player}`);
+    $('.start-button').removeAttr('selected');
   });
+
 
   $('.play-again').click(function() {
     ball.start = 1;
@@ -147,7 +149,7 @@ const borderBottom = {name: $('.bottom-border')};
     redPaddle.score = 0;
     $('.winner-field').removeAttr('id');
     $('.score-mid').text(`${bluePaddle.score} : ${redPaddle.score}`);
-
+    $('.play-again').removeAttr('selected');
   });
 
 
