@@ -139,7 +139,6 @@ const borderBottom = {name: $('.bottom-border')};
     $('form').attr('id', 'form-of');
     $('.score-left').text(`${bluePaddle.player}`);
     $('.score-right').text(`${redPaddle.player}`);
-    $('.start-button').removeClass('active');
   });
 
 
@@ -149,7 +148,6 @@ const borderBottom = {name: $('.bottom-border')};
     redPaddle.score = 0;
     $('.winner-field').removeAttr('id');
     $('.score-mid').text(`${bluePaddle.score} : ${redPaddle.score}`);
-    $('.play-again').removeClass('active');
   });
 
 
